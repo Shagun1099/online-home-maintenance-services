@@ -1,0 +1,45 @@
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10px;
+  padding: 20px;
+  width: 100%;
+  max-height: 400px;
+  min-width: 100px;
+  background-color: white;
+  z-index: 1;
+}
+
+.service_rating {
+  display: flex;
+}
+
+.service > img {
+  max-height: 250px;
+  width: 100%;
+  object-fit: contain;
+  margin:0 auto 15px auto;
+}
+
+button.service_btn {
+  background: #399cbd !important;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #6464ff #7777ff #3d3dff;
+  color: #111;
+}
+
+.service_description {
+  margin-top: 5px;
+}
+
+.service_info {
+  height: 100px;
+  margin-bottom: 15px;
+}@media only screen and (max-width: 420x), only screen and (max-device-width: 420px){
+ .service {
+  width:auto;
+}	
+}

@@ -1,11 +1,36 @@
 import React from 'react';
 import './App.css';
+import Header from './Header';
+import Home from "./Home";
+import Booking from './Booking';
+import Login from './Login';
+import Profile from './Profile'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
+
   return (
+	<Router>
     <div className="app">
-      
-    </div>
+	<Switch>
+	 <Route path="/profile">
+	 <Header/>
+     <Profile/>
+     </Route>
+	 <Route path="/login">
+     <Login />
+     </Route>
+	 <Route path='/booking/:id'>
+	 <Header/>
+	  <Booking/>
+	 </Route>
+	 <Route path='/'>
+	 <Header/>
+	  <Home/>
+	 </Route>
+	</Switch>
+	 </div>
+	 </Router>
   );
 }
 

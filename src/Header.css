@@ -1,0 +1,82 @@
+.header{
+	height:60px;
+	width:100vw;
+	display:flex;
+	background-color:#131921;
+	align-items:center;
+	position:fixed;
+	top:0;
+	z-index:100;
+}
+.header_logo{
+	width:100px;
+	object-fit:contain;
+	margin: 0 20px;
+	margin-top:18px;
+}
+.header_searchIcon{
+	padding:5px;
+	height:22px !important;
+	background-color:#399cbd;
+}
+.header__left{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	flex:0.6;
+	color:white;
+	margin: 0 20px;
+}
+
+.header__left > a{
+	text-decoration:none;
+	color:#399cbd;
+	margin-right:10px;
+}
+.header_search{
+	display:flex;
+	flex:1;
+	align-items:center;
+	border-radius:24px;
+}
+.header_searchInput{
+	height:12px;
+	padding:10px;
+	border:none;
+	width:100%;
+}
+.header_optionBasket{
+	display:flex;
+	align-items:center;
+	color:white;
+}
+.header_basketCount{
+	margin-left:10px;
+	margin-right:10px;
+}
+.header_optionLineOne{
+	font-size:10px;
+}
+.header_optionLineTwo{
+	font-size:13px;
+	font-weight:800;
+}
+.header_nav{
+	display:flex;
+	flex:0.4;
+	justify-content:space-evenly;
+}
+.header_option{
+	display:flex;
+	flex-direction:column;
+	margin-left:10px;
+	margin-right:10px;
+	color:white;
+}
+@media only screen and (max-width: 420x), only screen and (max-device-width: 420px){
+ .header{
+	height:100px;
+	display:flex;
+	flex-direction:column;
+}	
+}

@@ -1,0 +1,124 @@
+.profile{
+	background-color:#f8f8f8;
+	padding:80px 0 ;
+	height:100vh;
+	width:100vw;
+	display:grid;
+	place-items:center;
+}
+.profile_container{
+	padding: 70px 100px;
+	text-align:center;
+	background-color:white;
+	border-radius:10px;
+	box-shadow:-1px 4px 20px -6px rgba(0,0,0,0.75);
+}
+.profile_containerTop{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.profile_containerTopInfo{
+	display:flex;
+	flex-direction:column;
+	flex:1;
+	justify-content:center;
+	align-items:flex-start;
+	margin-left:40px;
+	padding-bottom: 5px;
+    border-bottom: 1px solid lightgray;
+}
+.profile_containerTop > .MuiAvatar-root{
+	width:100px !important;
+	height:100px !important;
+}
+.profile_containerTop > .MuiAvatar-img{
+	width:inherit !important;
+	height:inherit !important;
+}
+.profile_containerTopInfo > h4{
+	opacity:0.7;
+}
+.profile_containerMid{
+	padding:20px;
+}
+.profile_containerMid > p {
+    max-width: 500px;
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 0.7;
+}
+h4.profile_providerType {
+    text-transform: uppercase;
+    color:#e42217;
+    font-size: 20px;
+    font-weight: 600;
+}
+.profile_containerBottom {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f3f3f3;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  position:relative;
+  margin:20px auto;
+}
+.profile_containerBottom > p{
+	padding: 3px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 10px;
+	max-width:500px;
+}
+.profile_containerBottom > h3 {
+    align-self: center;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111;
+    border-bottom: 1px solid lightgrey;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.profile_containerBottom > button {
+    margin: 10px;
+    background: #e42217;
+    border: 1px solid;
+    color: #111;
+}
+p.booking_id {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    font-size: small;
+    font-weight: 600;
+}
+p.booking_creatingTime {
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    font-size: small;
+    font-weight: 600;
+    color: #e42217;
+}
+p.des {
+    text-decoration: underline;
+    opacity: 0.7;
+    font-style: italic;
+    text-decoration-color: lightslategray;
+}
+@media only screen and (max-width: 420x), only screen and (max-device-width: 420px){
+	.profile_container{
+		padding:20px;
+	}	
+	.profile_containerTopInfo{
+		margin-left:20px;
+	}
+	.profile_containerMid{
+		padding:20px 10px;
+	}
+	
+}
