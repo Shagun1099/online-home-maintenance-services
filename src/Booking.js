@@ -60,6 +60,24 @@ const bookService = e =>{
 		timestamp: firebase.firestore.FieldValue.serverTimestamp(), 
 		
 	  });
+
+	 db.collection('bookings')
+	   .doc('allBookings')
+	   .collection(service?.providerType)
+	   .add({
+		name:user?.user?.displayName,
+		email:user?.user?.email,
+		phone:user?.phone,
+		serviceId:id,
+		service:service.title,
+		serviceDate:serviceDate,
+		adrLineOne:adrLineOne,
+		adrLineTwo:adrLineTwo,
+		pinCode:pin,
+		serviceOption:serviceOption,
+		description:description,
+		timestamp: firebase.firestore.FieldValue.serverTimestamp(), 
+        });
 	 
 	const template_params ={
 			"userEmail":user.user?.email,
@@ -91,7 +109,7 @@ const bookService = e =>{
 	setServiceDate(" ");
 	setServiceOption(" ");
 	 
-	history.replace('/profile');
+	history.replace('/');
  }
 }
 	 

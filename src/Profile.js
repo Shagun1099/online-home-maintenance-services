@@ -10,27 +10,21 @@ function Profile()  {
  const [phone,setPhone]= useState(" ");
  const [dbPhone,setDbPhone] = useState(false);
  const [orders,setOrders]=useState([]);
- const [{user}] = useStateValue();
-	
+ const [{user},dispatch] = useStateValue();
 
- useEffect(() => {
-	 if(user){
-			 db
-			   .collection('users')
-			   .doc(user.user?.uid)
-			   .collection("orders")
-			   .onSnapshot(snapshot =>(
-			    setOrders(snapshot.docs.map((doc)=>({
-			     id:doc.id,
-			     data:doc.data(),
-			 })))
-	        ))
-          }else{
-			  setOrders([]);
-		  }
-		
-		},[]);
-	
+useEffect(()=>{
+   if(user?.isUser==false){
+	db.collection('bookings')
+	.doc('allBookings')
+	.collection(user?.providerType)
+	.onSnapshot(snapshot =>(
+	  setOrders(snapshot.docs.map((doc)=>({
+	   id:doc.id,
+	   data:doc.data(),
+   })))
+  ))
+   }
+},[]);
 
 	return(
 	   <div className="profile">
@@ -54,20 +48,42 @@ function Profile()  {
 		</div>
 		<div className="profile_containerMid">
 		<p>Dear user! We are so happy to have you here,on OHMS.Hope you're doing good.We promise you to provide the best services we could.</p>
-		</div>	
-		{ orders && orders.map(({data,id})=>(
-	 <div className="profile_containerBottom">
-		 <h3>YOUR BOOKING</h3>
-		 <p className="booking_id">Booking Id:{id}</p>
-		 <p>Booking For:<strong>{data?.service+"("+data?.serviceOption+")"}</strong></p>
-		 <p>Service Date: <strong>{<Moment format=" MMMM D,YYYY">{data?.serviceDate}</Moment>}</strong></p>
-		 <p>Address: <strong>{data?.adrLineOne + ", " + data?.adrLineTwo+" ("+ data?.pinCode+")"}</strong></p>
-		 <p className="des">"{data?.description}"</p>
-		 <p className="booking_creatingTime">Created At:<strong>{<Moment format=" MMM D,hh:mm:ss" unix>{data?.timestamp?.seconds}</Moment>}</strong></p>
-		<button>Delete Booking</button>
 		</div>
-		)
-	 )}
+		{ user?.isUser==false ? (
+			<>
+			{ orders ? (
+              <div className="profile_containerBottom">
+				<h1>All available {user?.providerType} Bookings</h1>
+                {orders.length >> 0 ? (orders.map(({data,id})=>(
+					<div className="order_Container profile_orderContainer">
+					<h3 className="order_id"><strong>BOOKING:</strong>{id}</h3>
+					<h5>{data?.name}</h5>
+					<h5>{data?.email}</h5>
+					<h5>{"+91-"+data?.phone}</h5>
+					<p>Booking For:<strong>{data?.service +"("+ data?.serviceOption+")"}</strong></p>
+					<p>Service Date: <strong>{<Moment format=" MMMM D,YYYY">{data?.serviceDate}</Moment>}</strong></p>
+					<p>Address: <strong>{data?.adrLineOne + ", " + data?.adrLineTwo + ", " + data?.pinCode}</strong></p>
+					<p className="des">"{data?.description}"</p>
+					<div className="profile_orderButtons">
+					  <button className="accept">Accept</button>
+					  <button className="reject">Reject</button>
+					</div>
+					</div>
+				))):(
+					<p>No {user?.providerType} orders available Yet</p>
+				)}
+			  </div>
+			):(
+				<>
+				</>
+			)}
+			</>
+
+		):(
+			<>
+			</>
+		)}	
+
 		</div>
 	   )}
     </div>

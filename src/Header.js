@@ -40,10 +40,12 @@ const handleAuth = () => {
             <span className="header_optionLineTwo">{user ? 'Sign Out': 'Sign In'}</span>
           </div>
 		  </Link>
+		  <Link to='/orders'>
 		<div className="header_option">
 		 <span className="header_optionLineOne">Your</span>
 		 <span className="header_optionLineTwo">Bookings</span>
 		</div>
+	    </Link>
 		<div className="header_option">
 		 <span className="header_optionLineOne">OHMS </span>
 		 <span className="header_optionLineTwo">Prime</span>

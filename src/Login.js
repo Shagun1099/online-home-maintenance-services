@@ -68,8 +68,14 @@ const signIn = () =>{
  }
 
 const submitDetails = () =>{
-	 
-	if(isUser==true){
+
+	if(phone == " "){
+		alert("Please Enter your phone Number");
+		setPhone(" ");
+	}
+	
+	else{
+      if(isUser==true){
 		 dispatch({
 		 type:'SET_USER',
 		 user:{
@@ -106,7 +112,7 @@ const submitDetails = () =>{
 		 setIsUser(true);
 		 setPhone(" ");
 		 history.push('/');	
-	
+	}
 }
 	
   return (
@@ -162,7 +168,7 @@ const submitDetails = () =>{
 					<MenuItem  value="Carpenter">Carpenter</MenuItem>
 					<MenuItem  value="MobileRepair Worker">Mobile Repair Worker</MenuItem>
 					<MenuItem  value="Cleaning Service Worker">Cleaning Service Worker</MenuItem>
-					<MenuItem  value="Cable Service Worker">Cable Service Worker</MenuItem>
+				    <MenuItem  value="Cable Service Worker">Cable Service Worker</MenuItem> 
                    </Select>
                    </FormControl>
 		         </>
@@ -171,7 +177,7 @@ const submitDetails = () =>{
 		  </>
 		 )}
 	   <h5>Your Phone Number:</h5>
-	  <input  onChange={(e)=>setPhone(e.target.value)} type="tel" minLength="10" maxLength="10"/>
+	  <input  onChange={(e)=>setPhone(e.target.value)} type="tel" minLength="9"/>
 	  <Button onClick={submitDetails}>Submit Details</Button>
 		</>
 		 )}

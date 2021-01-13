@@ -1,0 +1,97 @@
+.order{
+	margin:20px auto;
+	border-radius:7px;
+	padding:20px 80px;
+	display:flex;
+	justify-content:space-between;
+	align-items:flex-start;
+	flex-direction:column;
+	position:relative;
+	background-color:lightcyan;
+}
+p.order_id {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.7;
+}
+.order > h3 {
+    text-align: -webkit-center;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    padding: 10px 0 2px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111;
+}
+.order > h4{
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+	opacity:0.9;
+}
+.order_Container{
+	padding:2px 30px;
+	margin:10px auto;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	min-width:400px;
+	position:relative;
+	background-color:white;
+	border-radius: 20px 0 20px 55px;
+}
+.order_Info{
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+    align-content:flex-start;
+    padding:10px;
+}
+p.order_created {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 13px;
+    color: red;
+}
+button.order_deleteBtn {
+    align-self: flex-end;
+    background: red;
+    color: white;
+    border: none !important;
+    margin:10px 0;
+}
+.button.order_deleteBtn:focus{
+	border:none !important;
+	outline-width:0;
+	transform:scale(0.02);
+}
+  .order_Info > p{
+      padding: 3px;
+      font-size: 15px;
+      font-weight: 500;
+      margin-left: 10px;
+      max-width:500px;
+      margin:5px;
+  }
+  p.des {
+      text-decoration: underline;
+      opacity: 0.7;
+      font-style: italic;
+      text-decoration-color: lightslategray;
+  }
+  
+@media only screen and (max-width: 420x), only screen and (max-device-width: 420px){
+
+	.order{
+		padding:20px 10px;
+	}
+	.order_Container{
+		padding:10px;
+		min-width:300px;
+		border-radius:20px 0 20px 50px;
+	}
+}

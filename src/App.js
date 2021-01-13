@@ -4,7 +4,8 @@ import Header from './Header';
 import Home from "./Home";
 import Booking from './Booking';
 import Login from './Login';
-import Profile from './Profile'
+import Profile from './Profile';
+import Orders from './Orders';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -13,6 +14,10 @@ function App() {
 	<Router>
     <div className="app">
 	<Switch>
+	<Route path="/orders">
+	 <Header/>
+     <Orders/>
+     </Route>
 	 <Route path="/profile">
 	 <Header/>
      <Profile/>

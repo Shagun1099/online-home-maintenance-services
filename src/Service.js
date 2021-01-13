@@ -3,7 +3,7 @@ import './Service.css';
 import {Link} from 'react-router-dom';
 import {useStateValue} from './StateProvider';
 
-function Product({id,title, image,shortDescription, rating,description,options}) {
+function Product({id,title, image,shortDescription,providerType, rating,description,options}) {
 	
 const[{},dispatch]=useStateValue();
 	
@@ -15,9 +15,10 @@ const[{},dispatch]=useStateValue();
         title: title,
         image: image,
         rating: rating,
-		shortDescription:shortDescription,
-		description:description,
-		options:options
+        providerType: providerType,
+		   shortDescription:shortDescription,
+		   description:description,
+		   options:options
       },
     }); 
 },[])

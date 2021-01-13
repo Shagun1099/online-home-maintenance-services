@@ -1,14 +1,15 @@
 .profile{
 	background-color:#f8f8f8;
 	padding:80px 0 ;
-	height:100vh;
+	height:fit-content;
 	width:100vw;
-	display:grid;
-	place-items:center;
+	text-align: center;
 }
 .profile_container{
 	padding: 70px 100px;
+	margin:100px auto;
 	text-align:center;
+	max-width:500px;
 	background-color:white;
 	border-radius:10px;
 	box-shadow:-1px 4px 20px -6px rgba(0,0,0,0.75);
@@ -55,70 +56,85 @@ h4.profile_providerType {
     font-weight: 600;
 }
 .profile_containerBottom {
-  display: flex;
-  flex-direction: column;
-  align-items:flex-start;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #f3f3f3;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  position:relative;
-  margin:20px auto;
+    background: rgba(0,0,0,0.07);
+    padding: 20px 10px;
 }
-.profile_containerBottom > p{
-	padding: 3px;
-    font-size: 15px;
+.profile_containerBottom > h1 {
+    font-size: 25px;
     font-weight: 500;
-    margin-left: 10px;
-	max-width:500px;
-}
-.profile_containerBottom > h3 {
-    align-self: center;
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: 600;
-    color: #111;
-    border-bottom: 1px solid lightgrey;
-    width: 100%;
-    margin-bottom: 10px;
-}
-.profile_containerBottom > button {
-    margin: 10px;
-    background: #e42217;
-    border: 1px solid;
-    color: #111;
-}
-p.booking_id {
-    position: absolute;
-    right: 5px;
-    top: 0;
-    font-size: small;
-    font-weight: 600;
-}
-p.booking_creatingTime {
-    position: absolute;
-    right: 5px;
-    bottom: 0;
-    font-size: small;
-    font-weight: 600;
-    color: #e42217;
-}
-p.des {
     text-decoration: underline;
+	text-decoration-color:rgb(158, 158, 158);
+	margin-bottom:20px;
+}
+.profile_containerBottom > p {
+    font-weight: 500;
     opacity: 0.7;
-    font-style: italic;
-    text-decoration-color: lightslategray;
+    font-size: 15px;
+    margin: 20px auto;
+}
+.profile_orderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    max-width: 400px;
+    padding: 10px 0 10px 30px;
+}
+.profile_orderContainer > h3 {
+    align-self: center;
+    font-weight: 500;
+    font-size: 16px;
+}
+.profile_orderContainer > p {
+    font-size: 14px;
+    margin-top: 3px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+.profile_orderContainer >h5 {
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: gray;
+    font-size: 13px;
+    color:lightseagreen;
+}
+.profile_orderButtons {
+    margin: 10px;
+}
+button.accept {
+    background-color: rgb(34, 155, 34);
+    color: white;
+    border: none;
+    padding: 2px 8px;
+    border-radius: 2px;
+}
+button.reject {
+    background-color: rgb(243, 42, 42);
+    color: white;
+    border: none;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-left: 6px;
 }
 @media only screen and (max-width: 420x), only screen and (max-device-width: 420px){
 	.profile_container{
-		padding:20px;
+		padding:20px 3px;
+		width:98vw;
 	}	
 	.profile_containerTopInfo{
 		margin-left:20px;
 	}
 	.profile_containerMid{
 		padding:20px 10px;
+	}
+	.profile_containerBottom{
+		padding:10px 0;
+	}
+	.profile_orderContainer {
+       width:80vw;
+	}
+	.profile_containerBottom > h1{
+		font-size:22px;
 	}
 	
 }
